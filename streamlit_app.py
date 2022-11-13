@@ -1,6 +1,8 @@
 
 import streamlit
 import pandas
+import requests
+
 
 streamlit.title("My parents new healthy dinner!")
 
@@ -16,6 +18,5 @@ fruits_to_show = my_fruit_list.loc[friuts_selected]
 streamlit.dataframe(fruits_to_show)
 
 
-streamlit.header("Menu")
-streamlit.text("testing...")
-streamlit.text("testing..Third.!.")
+frutyviceResponse = requests.get("https://fruityvice.com/api/fruit/watermelon")
+strramlit.text(frutyviceResponse)
